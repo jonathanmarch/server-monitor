@@ -1,0 +1,48 @@
+{
+  "name": "server-monitor",
+  "version": "1.0.0",
+  "description": "A server monitor for monitoring uptime and response times.",
+  "main": "index.js",
+  "scripts": {
+    "test": ""
+  },
+  "author": "Lulz0rz",
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "bookshelf": "^0.9.2",
+    "checkit": "^0.6.0",
+    "express": "~4.13.1",
+    "express-validator": "~2.14.0",
+    "gamedig": "github:sonicsnes/node-gamedig",
+    "jjg-ping": "^1.0.1",
+    "knex": "^0.10.0",
+    "lodash": "^3.10.1",
+    "moment": "^2.12.0",
+    "request": "^2.63.0",
+    "socket.io": "^1.4.5",
+    "sqlite3": "^3.1.1",
+    "validator": "^4.1.0"
+  },
+  "devDependencies": {
+    "chai": "^3.2.0",
+    "chai-as-promised": "^5.1.0",
+    "gulp": "~3.9.0",
+    "gulp-angular-templatecache": "^1.8.0",
+    "gulp-concat": "~2.6.0",
+    "gulp-express": "~0.3.5",
+    "gulp-if": "^2.0.0",
+    "gulp-jshint": "^2.0.0",
+    "gulp-ng-annotate": "^2.0.0",
+    "gulp-sass": "~2.0.4",
+    "gulp-uglify": "~1.2.0",
+    "jasmine-core": "^2.3.4",
+    "jshint": "^2.9.2",
+    "jshint-stylish": "^2.1.0",
+    "karma": "^0.13.9",
+    "karma-chrome-launcher": "^0.2.0",
+    "karma-jasmine": "^0.3.6",
+    "simple-mock": "^0.4.1",
+    "supertest": "^1.1.0"
+  }
+}

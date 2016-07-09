@@ -1,0 +1,30 @@
+<div class="row">
+
+  <div class="col l12 m12 s12">
+    <table class="hoverable centered">
+      <thead>
+        <tr>
+          <th data-field="id">Server</th>
+          <th data-field="service">Service</th>
+          <th data-field="status">Status</th>
+          <th data-field="latency">Latency Average</th>
+          <th data-field="uptime">Uptime</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <tr ng-repeat="server in servers | orderBy: 'status':true" ng-click="view(server)">
+          <td>{{ (server.name) ? server.name : server.host }}</td>
+          <td>{{ (server.service == 2) ? server.type : services[ server.service ] }}</td>
+          <td>{{ server.status }}</td>
+          <td>{{ server.average_latency | number:0 }}ms</td>
+          <td>{{ server.uptime | number:2 }}%</td>
+        </tr>
+
+      </tbody>
+    </table>
+
+  </div>
+
+</div>

@@ -1,0 +1,77 @@
+
+<div class="row" style="margin: 15px auto">
+  <div class="col s12">
+    <ul class="tabs">
+      <li class="tab col s2"><a class="active" ng-click="update('1hr')">1 Hour</a></li>
+      <li class="tab col s2"><a ng-click="update('3hrs')">3 Hours</a></li>
+      <li class="tab col s2"><a ng-click="update('12hrs')">12 Hours</a></li>
+      <li class="tab col s2"><a ng-click="update('1day')">1 Day</a></li>
+      <li class="tab col s2"><a ng-click="update('7days')">7 Days</a></li>
+      <li class="tab col s2"><a ng-click="update('all')">All Time</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col l12 center-align z-depth-1">
+    <div id="graph" style="min-width: 310px; height: 450px; margin: 15px auto"></div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col s4 center-align">
+    <h5>Status</h5>
+    <div ng-class="(server.status == 'Online') ? 'green-text' : 'red-text'" class="text-lighten-2">{{ server.status }}</div>
+  </div>
+
+  <div class="col s4 center-align">
+    <h5>Service</h5>
+    <div>{{ (server.type) ? server.pretty : services[ server.service ] }}</div>
+  </div>
+
+  <div class="col s4 center-align">
+    <h5>Uptime</h5>
+    <div class="green-text text-lighten-2">{{ server.uptime | number:2}}%</div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col s4 center-align">
+    <h5>Average Latency</h5>
+    <div class="green-text text-lighten-2">{{ server.average_latency | number:0}}ms</div>
+  </div>
+
+  <div class="col s4 center-align">
+    <h5>Downtime</h5>
+    <div>{{ (server.downtime) ? server.downtime.length: '0' }} min(s)</div>
+  </div>
+
+  <div class="col s4 center-align">
+    <h5>Errors</h5>
+    <div class="red-text text-lighten-2">{{ logs.length }}</div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col s12">
+
+    <table class="hoverable">
+      <thead>
+        <tr>
+          <th data-field="time">Time</th>
+          <th data-field="log">Log Information</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <tr ng-repeat="log in logs">
+          <td>{{ log.created_at | date:'medium' }}</td>
+          <td>{{ log.log }}</td>
+        </tr>
+
+      </tbody>
+    </table>
+
+  </div>
+</div>

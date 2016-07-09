@@ -1,0 +1,39 @@
+<div class="row container" style="margin-top: 20px;">
+  <form class="col s12 card">
+    <div class="card-content">
+      <div class="row">
+        <h5>Add Server</h5>
+      </div>
+      <div class="row">
+        <div class="input-field col s8">
+          <input id="host" type="text" class="validate" placeholder="IP Address or URL" ng-model="server.host">
+          <label for="host" class="active">Host</label>
+        </div>
+        <div class="input-field col s4">
+          <input id="port" type="text" class="validate" placeholder="Only for gameservers" ng-model="server.port">
+          <label for="port" class="active">Port</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <select ng-model="server.service" class="browser-default">
+            <option value="" disabled selected>Choose the service</option>
+            <option value="0">Ping</option>
+            <option value="1">HTTP</option>
+            <option value="2">Gameserver</option>
+          </select>
+        </div>
+        <div class="input-field col s12" ng-show="server.service == 2">
+          <select ng-model="server.type" ng-options="game.type as game.name for game in games" class="browser-default">
+            <option value="" disabled selected>Choose the service</option>
+          </select>
+        </div>
+
+        <div class="input-field col s12">
+          <a class="waves-effect waves-light btn" ng-click="addServer()">Add Server</a>
+        </div>
+
+      </div>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+@import "components/color";
+
+header, main, footer {
+  padding-left: 240px;
+}
+
+@media only screen and (max-width : 992px) {
+  header, main, footer {
+    padding-left: 0;
+  }
+}
+
+.logo {
+  font-family: "Lobster", cursive;
+  color: color("green", "lighten-1");
+  font-size: 2em;
+  padding: 0 30px !important;
+  background-color: white !important;
+  border-bottom: 1px solid color("grey", "lighten-2");
+}
+
+.title {
+  text-transform: capitalize;
+}
+
+canvas{
+    width: 80% !important;
+    height: 500px !important;
+    margin-left: 100px;
+}
+
+.position-fixed {
+  position: fixed;
+}

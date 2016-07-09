@@ -1,0 +1,39 @@
+<div class="row container" style="margin-top: 20px;">
+  <form class="col s12 card">
+    <div class="card-content">
+      <div class="row">
+        <h5>Notifications</h5>
+      </div>
+      <div class="row">
+
+        <div class="input-field col s12 m6">
+          <input id="email" type="email" class="validate" placeholder="Email address to receive notifications" ng-model="email">
+          <label for="email" class="active">Email</label>
+        </div>
+
+        <div class="input-field col s12 m6">
+          <input id="threshold" type="text" class="validate" placeholder="Number of minutes of downtime before server is offline" ng-model="threshold">
+          <label for="threshold" class="active">Threshold</label>
+        </div>
+
+      </div>
+
+      <div class="row">
+
+        <div class="input-field col s12">
+          <input type="checkbox" id="errors" />
+          <label for="errors">Send notification for errors</label>
+        </div>
+
+      </div>
+
+      <div class="row">
+
+        <div class="input-field col s12">
+          <a class="waves-effect waves-light btn" ng-click="update()">Update</a>
+        </div>
+
+      </div>
+    </div>
+  </form>
+</div>
